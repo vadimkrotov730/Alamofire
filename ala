@@ -1,0 +1,15 @@
+import SwiftUI
+import Combine
+
+class AdvancedCombineDataService {
+    
+    @Published var basicPublisher: String = "first"
+    let currentValuePublisher = CurrentValueSubject<String, Never>("first")
+    let passThroughPublisher = PassthroughSubject<String, Never>()
+    
+    let passThroughPublisher2 = PassthroughSubject<Int?, Error>()
+    let passThroughPublisher3 = PassthroughSubject<Int?, Error>()
+    let boolThroughPublisher = PassthroughSubject<Bool, Error>()
+    
+    init() {
+        publishFakeData()
